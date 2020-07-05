@@ -1,25 +1,25 @@
 <template>
 	<div class='outer'>
 		<mt-header fixed title="固定在顶部"></mt-header>
-		<h1>123</h1>
-		<mt-tabbar v-model="selected" fixed>
-			<mt-tab-item id="首页">
-				<img slot="icon" src="src/imgs/首页.png">
-				首页
-			</mt-tab-item>
-			<mt-tab-item id="下载">
-				<img slot="icon" src="src/imgs/下载.png">
-				下载
-			</mt-tab-item>
-			<mt-tab-item id="发现">
-				<img slot="icon" src="src/imgs/发现.png">
-				发现
-			</mt-tab-item>    
-			<mt-tab-item id="想看">
-				<img slot="icon" src="src/imgs/想看.png">
-				想看
-			</mt-tab-item>
-		 </mt-tabbar>
+		<router-view></router-view>
+		<nav class="mui-bar mui-bar-tab">
+			<router-link class="mui-tab-item mui-active" to="home">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</router-link>
+			<router-link class="mui-tab-item" to="member">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">会员</span>
+			</router-link>
+			<router-link class="mui-tab-item" to="shopping">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">9</span></span>
+				<span class="mui-tab-label">购物车</span>
+			</router-link>
+			<router-link class="mui-tab-item" to="seek">
+				<span class="mui-icon mui-icon-search"></span>
+				<span class="mui-tab-label">搜索</span>
+			</router-link>
+		</nav>
 	</div>
 </template>
 
@@ -34,18 +34,12 @@
 			show(){
 				console.log('fang.vue里面的方法')
 			}
-		},
-		watch: {
-		      selected: function (val, oldVal) {
-		        console.log(val)
-		        // click后打印出当前mt-tab-item的id
-		      }
-		    }
+		}
 	}
 </script>
 
 <style scoped>
 	.outer{
-		
+		padding-top: 40px;
 	}
 </style>

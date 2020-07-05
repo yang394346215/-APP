@@ -8,6 +8,9 @@ import app from './app.vue'
 
 //导入bootstrap3
 import 'bootstrap3/dist/css/bootstrap.css'
+//导入mui
+import './mui/css/mui.css'
+import './mui/css/icons-extra.css'
 
 //导入mintUI 
 import MintUI from 'mint-ui'
