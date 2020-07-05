@@ -12,7 +12,8 @@ var routerobj = new VueRouter({
 		{path:'/member',component:member},
 		{path:'/shopping',component:shopping},
 		{path:'/seek',component:seek}
-	]
+	],
+	linkActiveClass:'mui-active'
 })
 //向外暴露一个routerobj对象，让main接收
 export default routerobj
