@@ -1,7 +1,9 @@
 <template>
 	<div class='outer'>
-		<mt-header fixed title="固定在顶部"></mt-header>
-		<router-view></router-view>
+		<mt-header fixed title="首页"></mt-header>
+		<transition>
+			<router-view></router-view>
+		</transition>
 		<nav class="mui-bar mui-bar-tab">
 			<router-link class="mui-tab-item" to="home">
 				<span class="mui-icon mui-icon-home"></span>
@@ -41,5 +43,19 @@
 <style scoped>
 	.outer{
 		padding-top: 40px;
+	}
+	.v-enter{
+		opacity: 0;
+		transform: translateX(100%);
+		position: absolute;
+	}
+	.v-leave-to{
+		opacity: 0;
+		transform: translateX(-100%);
+		position: absolute;
+	}
+	.v-leave-active,
+	.v-enter-active{
+		transition: all 1s ease;
 	}
 </style>
