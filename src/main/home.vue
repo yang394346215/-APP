@@ -1,25 +1,36 @@
 <template>
 	<div>
 		<mt-swipe :auto="4000">
-		  <mt-swipe-item></mt-swipe-item>
-		  <mt-swipe-item></mt-swipe-item>
-		  <mt-swipe-item></mt-swipe-item>
+		  <mt-swipe-item v-for='aaa in list' :key='aaa.id'>
+				<img :src="aaa.img" />
+		  </mt-swipe-item>
 		</mt-swipe>
 	</div>
 </template>
 
 <script>
 	import { Swipe, SwipeItem } from 'mint-ui';
+	import axios from 'axios';
 	export default{
 		data(){
 			return {
-				selected:'aaa'
+				list:[]
 			}
 		},
 		methods:{
-			show(){
-				console.log('fang.vue里面的方法')
+			getHandle(){
+			  axios.get('http://127.0.0.1:8081/123',{
+			     params:{},
+			    headers:{}
+			  })
+			  .then(res=>{
+				  this.list=res.data
+				  return console.log(res.data)
+				})
 			}
+		},
+		created(){
+			this.getHandle();
 		}
 	}
 </script>
@@ -28,13 +39,9 @@
 	.mint-swipe{
 		height: 200px;
 	}
-	.mint-swipe-item:nth-child(1){
-		background-color: red;
-	}
-	.mint-swipe-item:nth-child(2){
-		background-color: yellow;
-	}
-	.mint-swipe-item:nth-child(3){
-		background-color: blue;
+	
+	.mint-swipe-item img{
+		width: 100%;
+		height: 100%;
 	}
 </style>

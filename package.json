@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.19.2",
     "css-loader": "^3.6.0",
     "fibers": "^5.0.0",
     "file-loader": "^6.0.0",
