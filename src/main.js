@@ -18,6 +18,21 @@ import 'mint-ui/lib/style.css'
 
 Vue.use(MintUI)
 
+import axios from 'axios'
+Vue.prototype.$axios = axios
+
+//定义过滤器
+Vue.filter('newdate',function(datastr){
+	var a = new Date(datastr)
+	var Y = a.getFullYear();
+	var M = (a.getMonth()+1).toString().padStart(2,'0');
+	var D = a.getDate().toString().padStart(2,'0');
+	var h = a.getHours().toString().padStart(2,'0');
+	var m = a.getMinutes().toString().padStart(2,'0');
+	var s = a.getSeconds().toString().padStart(2,'0');
+	return `${Y}-${M}-${D}  ${h}:${m}:${s}`
+})
+
 var vm = new Vue({
 	el:'#app',
 	render: c=>c(app),

@@ -6,32 +6,33 @@
 		  </mt-swipe-item>
 		</mt-swipe>
 		<ul class="mui-table-view mui-grid-view mui-grid-9">
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/journalism">
+					<img src="src/imgs/新闻资讯.png" alt="">
+					<div class="mui-media-body">新闻资讯</div></router-link></li>
 			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-					<img src="src/imgs/分析趋势.png" alt="">
-					<div class="mui-media-body">分析趋势</div></a></li>
+					<img src="src/imgs/图片分享.png" alt="">
+					<div class="mui-media-body">图片分享</div></a></li>
 			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-					<img src="src/imgs/健康安全.png" alt="">
-					<div class="mui-media-body">健康安全</div></a></li>
+					<img src="src/imgs/商品购买.png" alt="">
+					<div class="mui-media-body">商品购买</div></a></li>
 			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-					<img src="src/imgs/列表清单.png" alt="">
-					<div class="mui-media-body">列表清单</div></a></li>
+					<img src="src/imgs/留言反馈.png" alt="">
+					<div class="mui-media-body">留言反馈</div></a></li>
 			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-					<img src="src/imgs/项目.png" alt="">
-					<div class="mui-media-body">项目</div></a></li>
+					<img src="src/imgs/视频专区.png" alt="">
+					<div class="mui-media-body">视频专区</div></a></li>
 			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-					<img src="src/imgs/消息群组.png" alt="">
-					<div class="mui-media-body">消息群组</div></a></li>
-			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-					<img src="src/imgs/周报.png" alt="">
-					<div class="mui-media-body">周报</div></a></li>
+					<img src="src/imgs/联系我们.png" alt="">
+					<div class="mui-media-body">联系我们</div></a></li>
 			
 		</ul> 
+		
 	</div>
 </template>
 
 <script>
 	import { Swipe, SwipeItem } from 'mint-ui';
-	import axios from 'axios';
+	
 	export default{
 		data(){
 			return {
@@ -40,14 +41,10 @@
 		},
 		methods:{
 			getHandle(){
-			  axios.get('http://127.0.0.1:8081/123',{
-			     params:{},
-			    headers:{}
+			  this.$axios.get('http://rap2.taobao.org:38080/app/mock/260858/imgsrc').then((res)=>{
+				  console.log(res.data.arr)
+			    this.list=res.data.arr
 			  })
-			  .then(res=>{
-				  this.list=res.data
-				  return console.log(res.data)
-				})
 			}
 		},
 		created(){

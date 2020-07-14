@@ -4,6 +4,8 @@ import home from './main/home.vue'
 import member from './main/member.vue'
 import shopping from './main/shopping.vue'
 import seek from './main/seek.vue'
+import journalism from './main/homeSub/journalism.vue'
+import zhaiyao from './main/homeSub/zhaiyao.vue'
 //3.创建路由对象
 var routerobj = new VueRouter({
 	routes:[
@@ -11,7 +13,9 @@ var routerobj = new VueRouter({
 		{path:'/home',component:home},
 		{path:'/member',component:member},
 		{path:'/shopping',component:shopping},
-		{path:'/seek',component:seek}
+		{path:'/seek',component:seek},
+		{path:'/home/journalism',component:journalism},
+		{path:'/home/journalism/:id',component:zhaiyao}
 	],
 	linkActiveClass:'mui-active'
 })
