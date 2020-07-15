@@ -21,6 +21,9 @@ Vue.use(MintUI)
 import axios from 'axios'
 Vue.prototype.$axios = axios
 
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
+
 //定义过滤器
 Vue.filter('newdate',function(datastr){
 	var a = new Date(datastr)

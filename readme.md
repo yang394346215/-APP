@@ -6,7 +6,7 @@
 		home轮播图：mint-ui的Swipe
 		home九宫格：mui的grid-default
 		home新闻：mui的media-list
-	
+		home图片展示：mint-ui的Navbar和TabContainer 和图片懒加载Lazy load
 
 ## 4
 ## 5

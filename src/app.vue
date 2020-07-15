@@ -59,4 +59,5 @@
 	.v-enter-active{
 		transition: all 1s ease;
 	}
+	
 </style>

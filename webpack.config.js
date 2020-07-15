@@ -28,8 +28,9 @@ module.exports = {
 			//limit给定的值如果大于或等于原图片的值，会被转成base64编码
 			{test: /\.(eot|svg|ttf|woff|woff2)$/,use: ['url-loader']},
 			//bootstrap3处理字体文件
-			{test: /\.vue$/,use: ['vue-loader']}
+			{test: /\.vue$/,use: ['vue-loader']},
 			//处理vue文件
+			{test: /\.js/,use: ['babel-loader'],exclude:/node_modules/}
 		]
 	},
 	//导包时设置的别名

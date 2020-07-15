@@ -6,6 +6,8 @@ import shopping from './main/shopping.vue'
 import seek from './main/seek.vue'
 import journalism from './main/homeSub/journalism.vue'
 import zhaiyao from './main/homeSub/zhaiyao.vue'
+import imageshare from './main/homeSub/imageshare.vue'
+import imgageinfo from './main/repetition/imgageinfo.vue'
 //3.创建路由对象
 var routerobj = new VueRouter({
 	routes:[
@@ -15,7 +17,9 @@ var routerobj = new VueRouter({
 		{path:'/shopping',component:shopping},
 		{path:'/seek',component:seek},
 		{path:'/home/journalism',component:journalism},
-		{path:'/home/journalism/:id',component:zhaiyao}
+		{path:'/home/journalism/:id',component:zhaiyao},
+		{path:'/home/imageshare',component:imageshare},
+		{path:'/home/imageshare/imgageinfo/:id',component:imgageinfo}
 	],
 	linkActiveClass:'mui-active'
 })
